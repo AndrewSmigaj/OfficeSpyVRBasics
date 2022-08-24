@@ -8,7 +8,11 @@ public class PhotocopierBehavior : MonoBehaviour
 
     public bool isPaperOnTray = false;
 
+    public GameObject copyAttachPoint;
+
     private GameObject currentDoc;
+
+    public GameObject playerObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,9 +52,22 @@ public class PhotocopierBehavior : MonoBehaviour
     {
         if (isPaperOnTray)
         {
+            Debug.Log("Got To Print");
             anim.SetBool("runPhotocopy", true);
-            Instantiate(currentDoc, this.transform.position + Vector3.up, this.transform.rotation) ;
+            StartCoroutine("stopPhotocopyAnim");
+            //anim.SetBool("runPhotocopy", false);
+            Instantiate(currentDoc, copyAttachPoint.transform.position, copyAttachPoint.transform.rotation);
+
+            //try it this way, next time might play with broadcasts
+            playerObject.GetComponent<PlayerGoals>().HasFinishedGoal = true;
         }
 
+    }
+
+
+    IEnumerator stopPhotocopyAnim()
+    {
+        yield return new WaitForSeconds(2);
+        anim.SetBool("runPhotocopy", false);
     }
 }

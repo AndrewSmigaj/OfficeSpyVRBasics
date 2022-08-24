@@ -9,6 +9,8 @@ public class RunPhotocopierButtonScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Triggered Button Manually");
+        Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("Hand"))
         {
             Debug.Log("Triggered print button");
