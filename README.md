@@ -6,6 +6,8 @@ where you have to deal with employees such as latenight office workers, guards, 
 a much richer set of interactions with the environment to solve puzzles and ultimately steal company 
 secrets.
 
+Assets used:  Progrids, Probuilder, XR Interaction Toolkit, Oculus Plugin, Snaps Office prototyping pack, Unity Input System, a few random office models found online.
+
 Challenges:  As a beginner to VR and Unity development a primary challenge was making sure wiring was correct,
 especially when trying to extend and add new interaction logic.  The XR interaction toolkit, especially with
 the new Input System, has a lot of moving parts to check and double check. 
